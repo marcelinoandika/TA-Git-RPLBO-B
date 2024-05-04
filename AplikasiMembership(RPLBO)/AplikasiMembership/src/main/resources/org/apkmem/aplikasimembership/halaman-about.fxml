@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.apkmem.aplikasimembership.halAboutController">
+   <left>
+      <AnchorPane prefHeight="740.0" prefWidth="211.0" style="-fx-background-color: lightgrey;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="12.0" layoutY="30.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="89.0" AnchorPane.leftAnchor="15.0">
+               <graphic>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="10.0" prefWidth="15.0">
+                     <children>
+                        <AnchorPane layoutX="53.0" layoutY="61.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="30.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <AnchorPane layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.5" prefWidth="29.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <AnchorPane layoutY="36.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.5" prefWidth="30.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </graphic>
+            </Button>
+            <Button fx:id="btnLogout" layoutX="68.0" layoutY="669.0" mnemonicParsing="false" onAction="#btnLogoutClick" prefHeight="25.0" prefWidth="73.0" text="LOG OUT" AnchorPane.bottomAnchor="45.66666666666663">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </Button>
+            <MenuButton alignment="CENTER" contentDisplay="BOTTOM" layoutX="41.0" layoutY="632.0" mnemonicParsing="false" popupSide="TOP" prefHeight="25.0" prefWidth="129.0" text="Ganti Akun" AnchorPane.bottomAnchor="82.66666666666663">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Akun 1" />
+                  <MenuItem mnemonicParsing="false" text="Akun 2" />
+               </items>
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </MenuButton>
+            <Hyperlink fx:id="linkAbout" layoutX="75.0" layoutY="702.0" onAction="#linkAboutClick" text="About Us" />
+            <Button fx:id="btnMenuUtama" layoutX="15.0" layoutY="78.0" mnemonicParsing="false" onAction="#btnMenuUtamaClick" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: whitesmoke;" text="Menu Utama">
+               <font>
+                  <Font name="Verdana Bold" size="12.179104804992676" />
+               </font>
+            </Button>
+            <Button layoutX="15.0" layoutY="113.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: whitesmoke;" text="Profil">
+               <font>
+                  <Font name="Verdana Bold" size="12.179104804992676" />
+               </font>
+            </Button>
+            <Button fx:id="btnDaftarMember" layoutX="15.0" layoutY="149.0" mnemonicParsing="false" onAction="#btnDaftarMemberClick" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: whitesmoke;" text="Daftar Membership">
+               <font>
+                  <Font name="Verdana Bold" size="12.179104804992676" />
+               </font>
+            </Button>
+            <Button layoutX="15.0" layoutY="185.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: whitesmoke;" text="Notifikasi">
+               <font>
+                  <Font name="Verdana Bold" size="12.179104804992676" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="740.0" prefWidth="1068.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="26.0" prefHeight="32.0" prefWidth="343.0" text="INFORMASI APLIKASI" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+               <font>
+                  <Font name="Verdana Bold" size="24.0" />
+               </font>
+            </Label>
+            <ScrollBar orientation="VERTICAL" prefHeight="740.0" prefWidth="26.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Label layoutX="78.0" layoutY="172.0" text="NAMA APLIKASI" AnchorPane.leftAnchor="80.0">
+               <font>
+                  <Font name="Verdana Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="364.0" text="PENGEMBANG" AnchorPane.leftAnchor="80.0">
+               <font>
+                  <Font name="Verdana Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="300.0" text="TANGGAL BERGABUNG" AnchorPane.leftAnchor="80.0">
+               <font>
+                  <Font name="Verdana Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="78.0" layoutY="237.0" text="VERSI" AnchorPane.leftAnchor="80.0">
+               <font>
+                  <Font name="Verdana Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="259.0" text="4.1" textFill="#726969">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="323.0" text="1 MEI 2024" textFill="#726969">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="386.0" text="Fransiska Endah Kusuma Wardani [71220864]" textFill="#726969">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="408.0" text="David Delon Seay [71220909]" textFill="#726969" AnchorPane.leftAnchor="80.0">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="430.0" text="Ricardo Marcelino Andhika Putra Fidelis [71220919]" textFill="#726969" AnchorPane.leftAnchor="80.0">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="452.0" text="Samuel Pether Tahalea [71220963]" textFill="#726969" AnchorPane.leftAnchor="80.0">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

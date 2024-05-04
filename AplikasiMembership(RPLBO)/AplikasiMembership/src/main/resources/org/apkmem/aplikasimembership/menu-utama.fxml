@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.apkmem.aplikasimembership.menuUtamaController">
+   <left>
+      <AnchorPane prefHeight="740.0" prefWidth="211.0" style="-fx-background-color: lightgrey;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="12.0" layoutY="30.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="89.0" AnchorPane.leftAnchor="15.0">
+               <graphic>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="10.0" prefWidth="15.0">
+                     <children>
+                        <AnchorPane layoutX="53.0" layoutY="61.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="30.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <AnchorPane layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.5" prefWidth="29.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <AnchorPane layoutY="36.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.5" prefWidth="30.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </graphic>
+            </Button>
+            <Button fx:id="btnLogout" layoutX="68.0" layoutY="669.0" mnemonicParsing="false" onAction="#btnLogoutClick" prefHeight="25.0" prefWidth="73.0" text="LOG OUT" AnchorPane.bottomAnchor="45.66666666666663">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </Button>
+            <MenuButton alignment="CENTER" contentDisplay="BOTTOM" layoutX="41.0" layoutY="632.0" mnemonicParsing="false" popupSide="TOP" prefHeight="25.0" prefWidth="129.0" text="Ganti Akun" AnchorPane.bottomAnchor="82.66666666666663">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Akun 1" />
+                  <MenuItem mnemonicParsing="false" text="Akun 2" />
+               </items>
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </MenuButton>
+            <Button fx:id="btnMenuUtama" layoutX="15.0" layoutY="78.0" mnemonicParsing="false" onAction="#btnMenuUtamaClick" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: whitesmoke;" text="Menu Utama">
+               <font>
+                  <Font name="Verdana Bold" size="12.179104804992676" />
+               </font>
+            </Button>
+            <Button layoutX="15.0" layoutY="113.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: whitesmoke;" text="Profil">
+               <font>
+                  <Font name="Verdana Bold" size="12.179104804992676" />
+               </font>
+            </Button>
+            <Button fx:id="btnDaftarMember" layoutX="15.0" layoutY="149.0" mnemonicParsing="false" onAction="#btnDaftarMemberClick" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: whitesmoke;" text="Daftar Membership">
+               <font>
+                  <Font name="Verdana Bold" size="12.179104804992676" />
+               </font>
+            </Button>
+            <Button layoutX="15.0" layoutY="185.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: whitesmoke;" text="Notifikasi">
+               <font>
+                  <Font name="Verdana Bold" size="12.179104804992676" />
+               </font>
+            </Button>
+            <Hyperlink fx:id="linkAbout" layoutX="75.0" layoutY="702.0" onAction="#linkAboutClick" text="About Us" />
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="740.0" prefWidth="1068.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="26.0" prefHeight="32.0" prefWidth="343.0" text="SELAMAT DATANG !" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+               <font>
+                  <Font name="Verdana Bold" size="24.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="158.0" layoutY="178.0" prefHeight="412.0" prefWidth="724.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="158.0" AnchorPane.rightAnchor="174.0" AnchorPane.topAnchor="178.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dce9f4" height="130.0" layoutX="41.0" layoutY="33.0" stroke="BLACK" strokeType="INSIDE" width="130.0" AnchorPane.leftAnchor="41.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dce9f4" height="130.0" layoutX="410.0" layoutY="33.0" stroke="BLACK" strokeType="INSIDE" width="130.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dce9f4" height="130.0" layoutX="410.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="130.0" AnchorPane.bottomAnchor="54.0" AnchorPane.rightAnchor="184.0" />
+                  <Label layoutX="437.0" layoutY="292.0" prefHeight="17.0" prefWidth="81.0" text="logo membership">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dce9f4" height="130.0" layoutX="229.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="130.0" AnchorPane.bottomAnchor="54.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dce9f4" height="130.0" layoutX="41.0" layoutY="228.0" stroke="BLACK" strokeType="INSIDE" width="130.0" AnchorPane.bottomAnchor="54.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dce9f4" height="130.0" layoutX="229.0" layoutY="33.0" stroke="BLACK" strokeType="INSIDE" width="130.0" AnchorPane.leftAnchor="229.0" AnchorPane.rightAnchor="364.66666666666663" />
+                  <Label layoutX="65.0" layoutY="292.0" prefHeight="17.0" prefWidth="81.0" text="logo membership">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="254.0" layoutY="89.0" prefHeight="17.0" prefWidth="81.0" text="logo membership">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="65.0" layoutY="89.0" prefHeight="17.0" prefWidth="81.0" text="logo membership">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="410.0" layoutY="172.66666666666666" text="Nama aplikasi membership" AnchorPane.bottomAnchor="227.33333333333334">
+                     <font>
+                        <Font name="Verdana" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="38.0" layoutY="173.0" text="Nama aplikasi membership" AnchorPane.bottomAnchor="227.0">
+                     <font>
+                        <Font name="Verdana" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="227.0" layoutY="172.0" text="Nama aplikasi membership">
+                     <font>
+                        <Font name="Verdana" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="38.0" layoutY="368.0" text="Nama aplikasi membership">
+                     <font>
+                        <Font name="Verdana" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="227.0" layoutY="368.0" text="Nama aplikasi membership">
+                     <font>
+                        <Font name="Verdana" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="408.0" layoutY="367.0" text="Nama aplikasi membership">
+                     <font>
+                        <Font name="Verdana" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="254.0" layoutY="292.0" prefHeight="17.0" prefWidth="81.0" text="logo membership">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="437.0" layoutY="89.0" prefHeight="17.0" prefWidth="81.0" text="logo membership">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <ScrollBar orientation="VERTICAL" prefHeight="740.0" prefWidth="26.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

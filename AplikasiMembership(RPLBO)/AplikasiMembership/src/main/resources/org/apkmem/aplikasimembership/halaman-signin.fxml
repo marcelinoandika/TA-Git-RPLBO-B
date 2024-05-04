@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.apkmem.aplikasimembership.halSigninController">
+   <left>
+      <AnchorPane minWidth="100.0" prefHeight="740.0" prefWidth="260.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
+         <children>
+            <Circle fill="WHITE" layoutX="114.0" layoutY="146.0" radius="48.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label alignment="CENTER" layoutX="12.0" layoutY="210.0" prefHeight="18.0" prefWidth="204.0" style="-fx-text-alignment: center;" text="NAMA APLIKASI">
+               <font>
+                  <Font name="Verdana" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="100.0" layoutY="138.0" text="logo" />
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="740.0" prefWidth="1022.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="249.0" text="LOGIN" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="360.0" AnchorPane.topAnchor="98.0">
+               <font>
+                  <Font name="Verdana Bold" size="18.0" />
+               </font>
+            </Label>
+            <AnchorPane onKeyPressed="#onKeyPressEvent" prefHeight="412.0" prefWidth="601.0" AnchorPane.bottomAnchor="164.0" AnchorPane.leftAnchor="166.0" AnchorPane.rightAnchor="166.0" AnchorPane.topAnchor="164.0">
+               <children>
+                  <Label layoutX="136.0" layoutY="98.0" text="Password : ">
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnLogin" alignment="CENTER" contentDisplay="CENTER" layoutX="301.0" layoutY="162.0" mnemonicParsing="false" onAction="#btnLoginClick" prefHeight="31.0" prefWidth="128.0" style="-fx-background-color: grey;" text="LOGIN" textFill="WHITE" AnchorPane.leftAnchor="301.0" AnchorPane.rightAnchor="273.66666666666663">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="137.0" layoutY="53.0" text="Username : " AnchorPane.leftAnchor="135.0">
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtusername" layoutX="226.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="356.0" promptText="Username" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="118.0" />
+                  <PasswordField fx:id="txtpassword" layoutX="228.0" layoutY="95.0" prefHeight="25.0" prefWidth="356.0" promptText="Password" />
+                  <AnchorPane layoutX="229.0" layoutY="330.0" prefHeight="21.0" prefWidth="271.0" />
+                  <Label layoutX="320.0" layoutY="129.0" text="Forgot password?">
+                     <font>
+                        <Font name="Verdana" size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

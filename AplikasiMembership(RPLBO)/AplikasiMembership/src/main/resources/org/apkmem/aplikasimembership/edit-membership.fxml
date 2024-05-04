@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="211.0" style="-fx-background-color: lightgrey;" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="740.0" prefWidth="211.0" style="-fx-background-color: lightgrey;">
+               <children>
+                  <Label layoutX="15.0" layoutY="75.0" prefHeight="20.0" prefWidth="149.0" style="-fx-background-color: whitesmoke; -fx-background-radius: 5px;" text="   Menu Utama" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.333333333333334" layoutY="105.0" prefHeight="20.0" prefWidth="151.0" style="-fx-background-color: whitesmoke; -fx-background-radius: 5px;" text="   Profil" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.333333333333334" layoutY="135.0" prefHeight="20.0" prefWidth="140.0" style="-fx-background-color: whitesmoke; -fx-background-radius: 5px;" text="   Daftar Membership" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="12.0" layoutY="30.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="89.0" AnchorPane.leftAnchor="15.0">
+                     <graphic>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="10.0" prefWidth="15.0">
+                           <children>
+                              <AnchorPane layoutX="53.0" layoutY="61.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.0" prefWidth="30.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <AnchorPane layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.5" prefWidth="29.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                              <AnchorPane layoutY="36.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1.5" prefWidth="30.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                     </graphic>
+                  </Button>
+                  <Label layoutX="15.0" layoutY="164.0" prefHeight="20.0" prefWidth="179.0" style="-fx-background-color: whitesmoke; -fx-background-radius: 5px;" text="   Notifikasi">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="740.0" prefWidth="1072.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="23.0" layoutY="45.333333333333336" prefHeight="30.0" prefWidth="205.0" text="EDIT  MEMBERSHIP" AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="45.333333333333336">
+               <font>
+                  <Font name="Verdana Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="28.0" layoutY="112.0" prefHeight="25.0" prefWidth="153.0" style="-fx-background-color: #DDDDDD; -fx-background-radius: 5px; -fx-border-color: grey; -fx-border-radius: 5px;" text="Nama Membership" AnchorPane.leftAnchor="28.0">
+               <font>
+                  <Font name="Verdana Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField layoutX="28.0" layoutY="146.0" prefHeight="25.0" prefWidth="380.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="664.0" />
+            <Label alignment="CENTER" layoutX="28.0" layoutY="197.0" prefHeight="25.0" prefWidth="151.0" style="-fx-background-color: #DDDDDD; -fx-background-radius: 5px; -fx-border-color: grey; -fx-border-radius: 5px;" text="Email" AnchorPane.leftAnchor="28.0">
+               <font>
+                  <Font name="Verdana Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField layoutX="28.0" layoutY="232.0" prefHeight="25.0" prefWidth="317.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="664.0" />
+            <Label alignment="CENTER" layoutX="28.0" layoutY="273.0" prefHeight="25.0" prefWidth="151.0" style="-fx-background-color: #DDDDDD; -fx-background-radius: 5px; -fx-border-color: grey; -fx-border-radius: 5px;" text="Jenis Keanggotaan">
+               <font>
+                  <Font name="Verdana Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField layoutX="28.0" layoutY="308.0" prefHeight="25.0" prefWidth="317.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="664.0" />
+            <Label alignment="CENTER" layoutX="28.0" layoutY="349.0" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #DDDDDD; -fx-background-radius: 5px; -fx-border-color: grey; -fx-border-radius: 5px;" text="Tanggal Mulai">
+               <font>
+                  <Font name="Verdana Bold" size="11.0" />
+               </font>
+            </Label>
+            <DatePicker layoutX="28.0" layoutY="384.0" prefHeight="25.0" prefWidth="153.0" AnchorPane.leftAnchor="28.0" />
+            <Label alignment="CENTER" layoutX="250.0000000000001" layoutY="351.0" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #DDDDDD; -fx-background-radius: 5px; -fx-border-color: grey; -fx-border-radius: 5px;" text="Tanggal Berakhir" AnchorPane.rightAnchor="664.6666666666666">
+               <font>
+                  <Font name="Verdana Bold" size="11.0" />
+               </font>
+            </Label>
+            <DatePicker layoutX="250.0" layoutY="385.0" prefHeight="25.0" prefWidth="153.0" />
+            <CheckBox layoutX="194.0" layoutY="478.0" mnemonicParsing="false" text="AKTIF" />
+            <Label alignment="CENTER" layoutX="156.0" layoutY="443.0" prefHeight="25.0" prefWidth="136.0" style="-fx-background-color: #DDDDDD; -fx-background-radius: 5px; -fx-border-color: grey; -fx-border-radius: 5px;" text="Status">
+               <font>
+                  <Font name="Verdana Bold" size="11.0" />
+               </font>
+            </Label>
+            <Button layoutX="845.0" layoutY="671.3333333333333" mnemonicParsing="false" text="SIMPAN" AnchorPane.bottomAnchor="45.33333333333337">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="936.0" layoutY="671.0" mnemonicParsing="false" text="BATAL">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

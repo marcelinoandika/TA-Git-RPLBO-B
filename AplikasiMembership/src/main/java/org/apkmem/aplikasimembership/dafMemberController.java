@@ -73,7 +73,12 @@ public class dafMemberController implements Initializable {
 
     @FXML
     protected void btnMenuUtamaClick(ActionEvent event) throws IOException {
-        GUI.setRoot("menu-utama", "Menu Utama",true);
+        if(SessionManager.getInstance().getId() == 99) {
+            GUI.setRoot("menu-admin", "Menu Utama",true);
+        }
+        else {
+            GUI.setRoot("menu-utama", "Menu Utama",true);
+        }
     }
 
     @FXML

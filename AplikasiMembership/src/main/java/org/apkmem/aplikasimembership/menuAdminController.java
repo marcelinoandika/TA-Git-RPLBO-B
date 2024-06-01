@@ -13,6 +13,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import org.apkmem.aplikasimembership.data.Membership;
 import org.apkmem.aplikasimembership.data.Users;
 import org.apkmem.aplikasimembership.util.DBConnector;
+import org.apkmem.aplikasimembership.util.SessionManager;
 
 import java.io.IOException;
 import java.net.URL;
@@ -99,6 +100,10 @@ public class menuAdminController implements Initializable {
     @FXML
     private Button btnProfil;
 
+    @FXML
+    private Button btnClear;
+
+
     private FilteredList<Membership> membershipsFilteredList;
     Membership selectedMembership;
     private Connection connection;
@@ -123,21 +128,6 @@ public class menuAdminController implements Initializable {
     @FXML
     void btnMenuUtamaClick(ActionEvent event) throws IOException {
         GUI.setRoot("menu-admin", "Menu Utama",true);
-    }
-
-    @FXML
-    void linkAboutClick(ActionEvent event) throws IOException {
-        GUI.setRoot("halaman-about", "About",true);
-    }
-
-    @FXML
-    void onBtnNotif(ActionEvent event) throws IOException {
-        GUI.setRoot("notifikasi", "Notifikasi",true);
-    }
-
-    @FXML
-    void onBtnProfil(ActionEvent event) throws IOException {
-        GUI.setRoot("profil-fix", "Profile",true);
     }
 
     @FXML
@@ -382,4 +372,9 @@ public class menuAdminController implements Initializable {
         }
         return false;
     }
+    @FXML
+    void onBtnCLear(ActionEvent event) {
+        bersihkan();
+    }
+
 }

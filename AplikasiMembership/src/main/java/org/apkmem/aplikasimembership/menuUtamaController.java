@@ -51,6 +51,7 @@ public class menuUtamaController {
 
     @FXML
     protected void btnDaftarMemberClick(ActionEvent event) throws IOException {
+        editMemberController.getInstance().getSelectedAppName();
         GUI.setRoot("daftar-membership", "Daftar Membership", true);
     }
 
@@ -83,36 +84,37 @@ public class menuUtamaController {
 
     @FXML
     void btnDisneyClick(ActionEvent event) throws IOException {
+        editMemberController.getInstance().setSelectedAppName("DISNEY");
         GUI.setRoot("edit-data-user", "Edit Informasi",true);
     }
 
     @FXML
     void btnMLClick(ActionEvent event) throws IOException {
+        editMemberController.getInstance().setSelectedAppName("MOBILE LEGENDS");
         GUI.setRoot("edit-data-user", "Edit Informasi",true);
     }
 
     @FXML
     void btnNetflixCLick(ActionEvent event) throws IOException {
+        editMemberController.getInstance().setSelectedAppName("NETFLIX");
         GUI.setRoot("edit-data-user", "Edit Informasi",true);
     }
 
     @FXML
-    void btnPlusClick(ActionEvent event) throws IOException {
-        GUI.setRoot("tambah-member-user", "Edit Informasi",true);
-    }
-
-    @FXML
     void btnSpotifyClick(ActionEvent event) throws IOException {
+        editMemberController.getInstance().setSelectedAppName("SPOTIFY");
         GUI.setRoot("edit-data-user", "Edit Informasi",true);
     }
 
     @FXML
     void btnViuClick(ActionEvent event) throws IOException{
+        editMemberController.getInstance().setSelectedAppName("VIU");
         GUI.setRoot("edit-data-user", "Edit Informasi",true);
     }
 
     @FXML
     void btnYoutubeClick(ActionEvent event) throws IOException{
+        editMemberController.getInstance().setSelectedAppName("YOUTUBE");
         GUI.setRoot("edit-data-user", "Edit Informasi",true);
     }
 

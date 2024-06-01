@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
+import java.util.StringTokenizer;
 import java.util.function.Predicate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -104,6 +105,27 @@ public class editMemberController implements Initializable {
     private Connection connection;
     private final String DB_URL = "jdbc:sqlite:memberDB.sqlite";
 
+    private static editMemberController instance;
+    private String selectedAppName;
+
+    public editMemberController() {}
+
+    public static editMemberController getInstance() {
+        if (instance == null) {
+            instance = new editMemberController();
+        }
+        return instance;
+    }
+
+    public String getSelectedAppName() {
+        return selectedAppName;
+    }
+
+    public void setSelectedAppName(String selectedAppName) {
+        this.selectedAppName = selectedAppName;
+    }
+
+
     @FXML
     void btnDaftarMemberClick(ActionEvent event) throws IOException {
         GUI.setRoot("daftar-membership", "Daftar Membership", true);
@@ -179,7 +201,10 @@ public class editMemberController implements Initializable {
         desc.setCellValueFactory(new PropertyValueFactory<>("deskripsi"));
         connection = DBConnector.getInstance().getConnection();
         createTable();
-        getAllData();
+        String selectedAppName = editMemberController.getInstance().getSelectedAppName();
+        if (selectedAppName != null) {
+            getAllData(selectedAppName);
+        }
         table.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Membership>() {
             @Override
             public void changed(ObservableValue<? extends Membership> observableValue, Membership course, Membership t1) {
@@ -258,11 +283,12 @@ public class editMemberController implements Initializable {
                 (membership.getStatus().toLowerCase().contains(searchText.toLowerCase()));
     }
 
-    private void getAllData() {
-        String query = "SELECT * FROM memberships WHERE id_user = ?";
+    private void getAllData(String appName) {
+        String query = "SELECT * FROM memberships WHERE id_user = ? AND nama_apk = ?";
         getObservableList().clear();
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, FK);
+            preparedStatement.setString(2, appName);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
                 int id = rs.getInt("id");

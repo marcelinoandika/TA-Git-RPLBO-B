@@ -172,6 +172,7 @@ public class dafMemberController implements Initializable {
         }
     }
 
+
     private boolean isMembershipsUpdated() {
         if (selectedMembership == null) {
             return false;
@@ -183,6 +184,15 @@ public class dafMemberController implements Initializable {
         } else {
             return false;
         }
+    }
+
+    public void onBtnNotif(ActionEvent event) throws IOException {
+        GUI.setRoot("notifikasi", "Notifikasi",true);
+    }
+
+    public void onBtnprfl(ActionEvent event) throws IOException {
+        GUI.setRoot("profil-fix", "Profil",true);
+
     }
 }
 

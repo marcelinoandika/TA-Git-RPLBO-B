@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.apkmem.aplikasimembership.data.Membership;
 import org.apkmem.aplikasimembership.util.DBConnector;
+import org.apkmem.aplikasimembership.util.SessionManager;
 
 import java.io.IOException;
 import java.net.URL;
@@ -57,6 +58,7 @@ public class dafMemberController implements Initializable {
 
     @FXML
     private Button btnMenuUtama;
+    private int FK = SessionManager.getInstance().getId();
 
     private FilteredList<Membership> membershipsFilteredList;
     Membership selectedMembership;
@@ -146,9 +148,10 @@ public class dafMemberController implements Initializable {
     }
 
     private void getAllData() {
-        String query = "SELECT * FROM memberships";
+        String query = "SELECT * FROM memberships WHERE id_user = ?";
         getObservableList().clear();
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, FK);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
                 int id = rs.getInt("id");

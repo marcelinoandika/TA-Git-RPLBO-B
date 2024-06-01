@@ -16,6 +16,11 @@ public class Users {
         this.setTelephone(telephone);
         this.setPassword(password);
     }
+    public Users(String username, String email, String telephone) {
+        this.setUsername(username);
+        this.setEmail(email);
+        this.setTelephone(telephone);
+    }
 
     public int getId() {
         return id;

@@ -122,7 +122,7 @@ public class menuAdminController implements Initializable {
 
     @FXML
     void btnMenuUtamaClick(ActionEvent event) throws IOException {
-        GUI.setRoot("menu-utama", "Menu Utama",true);
+        GUI.setRoot("menu-admin", "Menu Utama",true);
     }
 
     @FXML

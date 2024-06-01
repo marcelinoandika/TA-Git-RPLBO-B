@@ -1,35 +1,29 @@
 package org.apkmem.aplikasimembership;
 
-import Connector.DBConnector;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.apkmem.aplikasimembership.data.Membership;
+import org.apkmem.aplikasimembership.util.DBConnector;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+/**
+ * @editor David.Seay-71220909
+ */
 public class dafMemberController implements Initializable {
-
-    @FXML
-    private Button btnCari;
-
-    @FXML
-    private Button btnEdit;
-
-    @FXML
-    private Button btnHapus;
-
-    @FXML
-    private Button btnTambah;
 
     @FXML
     private TableColumn<Membership, Integer> id;
@@ -53,6 +47,9 @@ public class dafMemberController implements Initializable {
     private TableColumn<Membership, String> tglMulai;
 
     @FXML
+    private TableColumn<Membership, String> txtDesc;
+
+    @FXML
     private TextField txtCari;
 
     @FXML
@@ -61,10 +58,10 @@ public class dafMemberController implements Initializable {
     @FXML
     private Button btnMenuUtama;
 
-    Connection connNEW = null;
-    String query = null;
-    PreparedStatement ps = null;
-    ResultSet rs = null;
+    private FilteredList<Membership> membershipsFilteredList;
+    Membership selectedMembership;
+    private Connection connection;
+    private final String DB_URL = "jdbc:sqlite:memberDB.sqlite";
 
 
     @FXML
@@ -77,46 +74,112 @@ public class dafMemberController implements Initializable {
         GUI.setRoot("menu-utama", "Menu Utama",true);
     }
 
-
-    public void getUserMembership() throws SQLException {
-        try {
-            connNEW = DBConnector.getConnect();
-            query = "SELECT * FROM memberships";
-            ps = connNEW.prepareStatement(query);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                int No = rs.getInt("id");
-                String namaAplikasi = rs.getString("nama_apk");
-                String jenisMem = rs.getString("jenis_membership");
-                String tglMulai = rs.getString("tgl_mulai");
-                String tglBerakhir = rs.getString("tgl_berhenti");
-                String status = rs.getString("status");
-
-                Membership membership = new Membership(
-                        No, namaAplikasi, jenisMem,
-                        tglMulai, tglBerakhir, status);
-                table.getItems().add(membership);
-            }
-        } catch (SQLException e) {
-            Logger.getLogger(DBConnector.class.getName()).log(Level.SEVERE, null, e);
-
+    @FXML
+    protected void btnLogoutClick(ActionEvent event) throws IOException {
+        Alert alert;
+        alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setHeaderText("LOGOUT");
+        alert.setContentText("Are you sure want to LOGOUT?");
+        if(alert.showAndWait().get() == ButtonType.OK) {
+            GUI.setRoot("halaman-signin", "Halaman Login",true);
         }
+    }
+
+    @FXML
+    protected void linkAboutClick(ActionEvent event) throws IOException {
+        GUI.setRoot("halaman-about", "About",true);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
-            getUserMembership();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
+        membershipsFilteredList = new FilteredList<>(FXCollections.observableList(FXCollections.observableArrayList()));
+        table.setItems(membershipsFilteredList);
+        txtCari.textProperty().addListener(
+                (observableValue, oldValue, newValue) -> membershipsFilteredList.setPredicate(createPredicate(newValue))
+        );
         id.setCellValueFactory(new PropertyValueFactory<>("id"));
         namaAplikasi.setCellValueFactory(new PropertyValueFactory<>("nama_apk"));
         jenisMembership.setCellValueFactory(new PropertyValueFactory<>("jenis_membership"));
         tglMulai.setCellValueFactory(new PropertyValueFactory<>("tgl_mulai"));
         tglBerakhir.setCellValueFactory(new PropertyValueFactory<>("tgl_berhenti"));
         status.setCellValueFactory(new PropertyValueFactory<>("status"));
+        txtDesc.setCellValueFactory(new PropertyValueFactory<>("deskripsi"));
+        connection = DBConnector.getInstance().getConnection();
+        createTable();
+        getAllData();
+    }
+
+    public void createTable() {
+        String mhsTableSql = "CREATE TABLE IF NOT EXISTS memberships ("
+                + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + "nama_apk TEXT NOT NULL,"
+                + "jenis_membership TEXT NOT NULL,"
+                + "tgl_mulai DATE NOT NULL,"
+                + "tgl_berhenti TEXT NOT NULL,"
+                + "status TEXT NOT NULL,"
+                + "id_user INT(10) NOT NULL,"
+                + "deskripsi TEXT NOT NULL"
+                + ")";
+        try (Statement stmt = connection.createStatement()) {
+            stmt.execute(mhsTableSql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Handle table creation error
+        }
+    }
+
+    private ObservableList<Membership> getObservableList() {
+        return (ObservableList<Membership>) membershipsFilteredList.getSource();
+    }
+
+    private Predicate<Membership> createPredicate(String searchText) {
+        return membership -> {
+            if (searchText == null || searchText.isEmpty()) return true;
+            return searchFindsMembership(membership, searchText);
+        };
+    }
+
+    private boolean searchFindsMembership(Membership membership, String searchText) {
+        return (membership.getNama_apk().toLowerCase().contains(searchText.toLowerCase())) ||
+                (membership.getJenis_membership().toLowerCase().contains(searchText.toLowerCase())) ||
+                (membership.getStatus().toLowerCase().contains(searchText.toLowerCase()));
+    }
+
+    private void getAllData() {
+        String query = "SELECT * FROM memberships";
+        getObservableList().clear();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String namaAplikasi = rs.getString("nama_apk");
+                String jenisMem = rs.getString("jenis_membership");
+                String tglMulai = rs.getString("tgl_mulai");
+                String tglBerakhir = rs.getString("tgl_berhenti");
+                String status = rs.getString("status");
+                String desc = rs.getString("deskripsi");
+                Membership membership = new Membership(
+                        id, namaAplikasi, jenisMem,
+                        tglMulai, tglBerakhir, status,desc);
+                getObservableList().add(membership);
+            }
+        } catch (SQLException e) {
+            // Handle database query error
+            e.printStackTrace();
+        }
+    }
+
+    private boolean isMembershipsUpdated() {
+        if (selectedMembership == null) {
+            return false;
+        }
+        if (!selectedMembership.getNama_apk().equalsIgnoreCase(namaAplikasi.getText()) ||
+                !selectedMembership.getJenis_membership().equalsIgnoreCase(jenisMembership.getText()) ||
+                !selectedMembership.getStatus().equalsIgnoreCase(status.getText())) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 

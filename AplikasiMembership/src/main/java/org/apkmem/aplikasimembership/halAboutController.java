@@ -4,10 +4,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Hyperlink;
 
 import java.io.IOException;
-
+/**
+ * @editor David.Seay-71220909
+ */
 public class halAboutController {
 
     @FXML
@@ -41,12 +44,12 @@ public class halAboutController {
     @FXML
     protected void btnLogoutClick(ActionEvent event) throws IOException {
         Alert alert;
-        alert = new Alert(Alert.AlertType.INFORMATION);
+        alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setHeaderText("LOGOUT");
         alert.setContentText("Are you sure want to LOGOUT?");
-        alert.showAndWait();
-
-        GUI.setRoot("halaman-signin", "Halaman Login",true);
+        if(alert.showAndWait().get() == ButtonType.OK) {
+            GUI.setRoot("halaman-signin", "Halaman Login",true);
+        }
     }
 
 }

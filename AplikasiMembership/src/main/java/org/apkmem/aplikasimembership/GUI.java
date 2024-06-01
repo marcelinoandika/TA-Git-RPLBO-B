@@ -1,11 +1,11 @@
 package org.apkmem.aplikasimembership;
 
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.apkmem.aplikasimembership.util.SessionManager;
 
 import java.io.IOException;
 
@@ -15,8 +15,13 @@ public class GUI extends Application{
     @Override
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
-        primaryStage.setTitle("Halaman Awal");
-        primaryStage.setScene(new Scene(loadFXML("halaman-awal")));
+        if (SessionManager.getInstance().isLoggedIn()){
+            primaryStage.setTitle("Menu Utama");
+            primaryStage.setScene(new Scene(loadFXML("menu-utama")));
+        }else {
+            primaryStage.setTitle("Halaman Login");
+            primaryStage.setScene(new Scene(loadFXML("halaman-signin")));
+        }
         primaryStage.show();
     }
 

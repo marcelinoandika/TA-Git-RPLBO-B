@@ -9,7 +9,9 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
 import java.io.IOException;
-
+/**
+ * @editor David.Seay-71220909
+ */
 public class halDaftarController {
 
     @FXML

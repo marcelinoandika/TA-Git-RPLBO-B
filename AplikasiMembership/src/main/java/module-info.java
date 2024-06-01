@@ -15,4 +15,8 @@ module org.apkmem.aplikasimembership {
 
     opens org.apkmem.aplikasimembership to javafx.fxml;
     exports org.apkmem.aplikasimembership;
+    exports org.apkmem.aplikasimembership.util;
+    opens org.apkmem.aplikasimembership.util to javafx.fxml;
+    exports org.apkmem.aplikasimembership.data;
+    opens org.apkmem.aplikasimembership.data to javafx.fxml;
 }

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.apkmem.aplikasimembership.notifController">
+   <left>
+      <AnchorPane prefHeight="740.0" prefWidth="211.0" style="-fx-background-color: #f3ca52;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnLogout" layoutX="68.0" layoutY="669.0" mnemonicParsing="false" onAction="#btnLogoutClick" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #0a6847;" text="LOG OUT" textFill="#f6f4f4" AnchorPane.bottomAnchor="45.0">
+               <font>
+                  <Font name="Verdana Bold" size="12.0" />
+               </font>
+            </Button>
+            <MenuButton alignment="CENTER" contentDisplay="BOTTOM" layoutX="41.0" layoutY="632.0" mnemonicParsing="false" popupSide="TOP" prefHeight="25.0" prefWidth="129.0" text="Ganti Akun" AnchorPane.bottomAnchor="82.66666666666663">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Akun 1" />
+                  <MenuItem mnemonicParsing="false" text="Akun 2" />
+               </items>
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </MenuButton>
+            <Button fx:id="btnMenuUtama" layoutX="15.0" layoutY="84.0" mnemonicParsing="false" onAction="#btnMenuUtamaClick" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: #0a6847;" text="Menu Utama" textFill="#f8f6f6">
+               <font>
+                  <Font name="Verdana Bold" size="12.179104804992676" />
+               </font>
+            </Button>
+            <Button fx:id="btnProfil" layoutX="15.0" layoutY="119.0" mnemonicParsing="false" onAction="#onBtnProfil" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: #0a6847;" text="Profil" textFill="#f6f4f4">
+               <font>
+                  <Font name="Verdana Bold" size="12.179104804992676" />
+               </font>
+            </Button>
+            <Button fx:id="btnDaftarMember" layoutX="15.0" layoutY="155.0" mnemonicParsing="false" onAction="#btnDaftarMemberClick" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: #0a6847;" text="Daftar Membership" textFill="#f6f5f5">
+               <font>
+                  <Font name="Verdana Bold" size="12.179104804992676" />
+               </font>
+            </Button>
+            <Button fx:id="btnNotif" layoutX="15.0" layoutY="191.0" mnemonicParsing="false" onAction="#onBtnNotif" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: #0a6847;" text="Notifikasi" textFill="#fdfbfb">
+               <font>
+                  <Font name="Verdana Bold" size="12.179104804992676" />
+               </font>
+            </Button>
+            <Hyperlink fx:id="linkAbout" layoutX="75.0" layoutY="702.0" onAction="#linkAboutClick" text="About Us" />
+            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="64.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/Logo%20bg%20tranparent2.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="740.0" prefWidth="1068.0" style="-fx-background-color: #f6e9b2;" BorderPane.alignment="CENTER">
+         <children>
+            <Label contentDisplay="CENTER" layoutY="82.0" prefHeight="32.0" prefWidth="343.0" text="NOTIFIKASI " AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="82.0">
+               <font>
+                  <Font name="Verdana Bold" size="24.0" />
+               </font>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </Label>
+            <VBox layoutX="29.0" layoutY="170.0" prefHeight="187.0" prefWidth="717.0" AnchorPane.leftAnchor="30.0">
+               <children>
+                  <VBox style="-fx-background-color: BFF6C3;">
+                     <children>
+                        <Label text="SPOTIFY">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="393.0" text="Akun premium Anda berakhir 2 hari lagi. Perpanjang sekarang !">
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0" style="-fx-background-color: E0FBE2;">
+                     <children>
+                        <Label text="YOUTUBE">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="393.0" text="Akun Youtube Premium anda telah diperpanjang selama 30 hari.">
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0" style="-fx-background-color: BFF6C3;">
+                     <children>
+                        <Label text="VIU">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="23.0" prefWidth="441.0" text="Lakukan perpanjang akun anda! Akun premium Anda akan berakhir7 hari lagi ">
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="61.0" style="-fx-background-color: E0FBE2;">
+                     <children>
+                        <Label text="Disney+">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="393.0" text="Akun Youtube Premium anda telah diperpanjang selama 30 hari.">
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

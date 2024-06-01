@@ -5,14 +5,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 import java.io.IOException;
-
+/**
+ * @editor David.Seay-71220909
+ */
 public class halAwalController {
-
-    @FXML
-    private Button btnDaftar;
-
-    @FXML
-    private Button btnMasuk;
 
     @FXML
     protected void onbtnDaftarClick(ActionEvent event) throws IOException {
